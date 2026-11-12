@@ -1,0 +1,44 @@
+{
+  "planner_config": {
+    "tolerance": 1e-06,
+    "door_width": 3.0,
+    "archway_width": 4.0,
+    "corner_clearance": 0.5,
+    "approach_depth": 0.75,
+    "position_fractions": [
+      0.5,
+      0.25,
+      0.75,
+      0.0,
+      1.0
+    ],
+    "allow_archways": true,
+    "allow_bathroom_relaxation": true,
+    "time_limit": 30.0,
+    "root_id": null,
+    "bedroom_transit_cost": 12.0,
+    "bathroom_transit_cost": 200.0,
+    "extra_ensuite_cost": 4.0,
+    "no_public_bathroom_cost": 8.0,
+    "max_candidate_options": 5000
+  },
+  "room_connection_costs": {
+    "bathroom_bathroom": 60,
+    "bathroom_hallway": 1,
+    "bathroom_entry": 2,
+    "bathroom_bedroom": 3,
+    "bathroom_living": 5,
+    "bathroom_dining": 15,
+    "bathroom_kitchen": 30,
+    "bathroom_other": 8,
+    "bedroom_bedroom": 15,
+    "bedroom_hallway": 1,
+    "bedroom_entry": 2,
+    "bedroom_living": 3,
+    "bedroom_dining": 6,
+    "bedroom_kitchen": 8,
+    "bedroom_other": 6,
+    "public_public": 1,
+    "fallback": 5
+  }
+}
