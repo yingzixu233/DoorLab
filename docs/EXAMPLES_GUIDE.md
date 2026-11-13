@@ -1,8 +1,12 @@
-# DoorLab example models for Revit 2026
+# DoorLab example models for Revit 2026 and 2027
 
-These three doorless models provide test starts with the tested wall-hosted swing-door and passage-opening families loaded. Use the released DoorLab build that matches your Revit update. The current installer contains the Revit 2026 / .NET 8 build.
+Start from a doorless working copy with suitable wall-hosted swing-door and passage-opening types loaded. DoorLab v0.1.1 includes Revit 2026 / .NET 8 and Revit 2027 / .NET 10 builds in one installer. Use the build that matches your Revit release and update. Revit 2026.5 and later updates require a separate Revit 2026 / .NET 10 build, which is outside this package.
 
 Each sample is in its own folder so DoorLab can create a separate revit-exchange folder beside that model.
+
+Download `DoorLab_Examples_Revit2026.zip` for Revit 2026, or `DoorLab_Examples_Revit2027.zip` for Revit 2027. Each archive contains three models saved in the named Revit format. Revit 2026 cannot open the 2027 models.
+
+Make a working copy of an entire sample folder before testing. If using the 2026 archive in Revit 2027, allow Revit to upgrade the copied model and save the upgraded copy before exporting. Keep the original 2026 files.
 
 | Sample | Test focus |
 |---|---|
@@ -12,7 +16,7 @@ Each sample is in its own folder so DoorLab can create a separate revit-exchange
 
 ## Run a sample
 
-1. Extract this entire examples ZIP to a writable local folder. Open one sample model in Revit 2026 and open its floor-plan view containing the named rooms.
+1. Close all Revit windows and run the v0.1.1 DoorLab installer. Select the available Revit 2026 or 2027 version, install, then reopen Revit. Extract the matching examples ZIP to a writable local folder and copy the sample folder you want to test. Open the copied model and its floor-plan view containing the named rooms. Save the upgraded copy if opening a 2026 model in Revit 2027.
 2. Run **Add-Ins > External Tools > DoorLab - Export Floorplan**. Select the four exterior basic walls when prompted. The walls define the rectangular exterior outline used by this prototype.
 3. Open **DoorLab - Plan Door Layout**. Choose the loaded swing-door and passage-opening family types by their actual widths. Family and type names can follow the language of the model.
 4. To compare against the benchmark settings, choose a swing-door width of **3 ft / 36 in / 914.4 mm** and an archway width of **4 ft / 48 in / 1219.2 mm**. Use **Reset to Defaults** for the remaining settings, then select the family types. ReferenceSettings.json records all benchmark settings and connection costs.
@@ -33,4 +37,4 @@ Floorplan 6 includes unassigned space. Unlabelled voids are excluded from circul
 | Floorplan_3 | 5 | 14.870000 | Passed |
 | Floorplan_6 | 6 | 22.950000 | Passed |
 
-MANIFEST.json records model-copy checksums, solver and Notebook checksums, settings and validation results. The model version is Revit 2026. Revit files saved by a newer release require a compatible Revit version.
+MANIFEST.json records the model format and checksums for the files in the archive, together with reference-calculation provenance. The reference results above validate the original Notebook JSON benchmarks; they do not establish identical scores or per-model verification for the supplied Revit files. Saved working copies have different file contents and checksums.

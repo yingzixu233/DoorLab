@@ -1,8 +1,10 @@
-# Try DoorLab in Revit 2026
+# Try DoorLab in Revit 2026 or 2027
 
-Download `DoorLabSetup.exe` and `DoorLab_Examples_Revit2026.zip` from the [release page](https://github.com/yingzixu233/DoorLab/releases). Close Revit, double-click the installer, and click **Install** for an available Revit version. After installation, reopen Revit.
+Download `DoorLabSetup.exe` from the [v0.1.1 release page](https://github.com/yingzixu233/DoorLab/releases/tag/v0.1.1), plus `DoorLab_Examples_Revit2026.zip` for Revit 2026 or `DoorLab_Examples_Revit2027.zip` for Revit 2027. Close all Revit windows, double-click the installer, select an available Revit version, and click **Install**. After installation, reopen Revit.
 
-1. Extract the examples into a writable local folder. Read `EXAMPLES_GUIDE.md`, then open `Floorplan_1/Floorplan_1_blank.rvt` and its floor-plan view. Keep the supplied folder structure so each example has a separate `revit-exchange` directory.
+The v0.1.1 package contains Revit 2026 / .NET 8 and Revit 2027 / .NET 10 builds. Both builds and the combined installer checks have passed, and the author has confirmed successful manual workflow testing in Revit 2027.4. Revit 2026.5 and later updates need a separate 2026 / .NET 10 build, which is outside this package. The setup window distinguishes an installation it cannot find from a detected Revit installation whose DoorLab build is unavailable.
+
+1. Extract the matching examples package into a writable local folder and make a working copy. Read `EXAMPLES_GUIDE.md`, then open `Floorplan_1/Floorplan_1_blank.rvt` and its floor-plan view. Keep the supplied folder structure so each example has a separate `revit-exchange` directory. Save an upgraded copy if opening a 2026 model in Revit 2027.
 2. Run **Add-Ins → External Tools → DoorLab - Export Floorplan**. Select the four exterior walls when prompted. These walls define the rectangular outer boundary for this example.
 3. Run **DoorLab - Plan Door Layout**. On **Openings & Clearances**, select the example's loaded swing-door type and passage-opening type. Check **Actual Width Used** for each selection. Use `ReferenceSettings.json` when you want to compare the settings used for the benchmark drawings.
 4. Review the other three settings pages. Hover over a **?** for a short explanation, or click it for more detail. A width such as `3 ft`, `36 in` or `914.4 mm` represents the same length.
@@ -18,4 +20,6 @@ For a controlled scoring check on Floorplan 1, record Plan 1's cost breakdown, c
 
 If DoorLab reports that previews and settings differ, use **Generate Plans** for the current settings. After editing walls or room boundaries, export the active floor plan again before generating. A search marked incomplete means the time budget ended before equal-best enumeration finished.
 
-Revit 2026 sample files should be opened with a compatible Revit 2026 installation. The installer lists the versions that match its included build. Save separate model copies for testing other Revit releases.
+Changing **Target Width** keeps the previously selected family. To look for matching types in other loaded families, click **Search all families at target width**, then open **Family & Type**. **Show all types and widths** removes both filters. Matching uses the actual width parameter; `3 ft` equals `914.4 mm`, so a `900 mm` type has a different width.
+
+Keep the supplied Revit 2026 models unchanged when testing Revit 2027. A model saved in Revit 2027 cannot be opened directly in Revit 2026. The installer lists the versions that match its included builds; a detected version with a missing build remains unavailable for installation.
